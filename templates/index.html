@@ -1,1 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Heart Failure Prediction</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
 
+<body>
+<div class='img'></div>
+<form class="form" action="{{ url_for('predict') }}" method="POST">
+    <h2>Age</h2>
+    <input class="age" type="text" id="uiage" name="age_value" value="" required="required"/>
+
+    <h2>Anemia</h2>
+    <input class="anemia" type="text" id="uianemia" name="anemia_value" value="0/1" required="required"/>
+
+    <h2>creatinine_phosphokinase</h2>
+    <input class="creatinine_phosphokinase" type="text" id="uicreatinine_phosphokinase" name="creatinine_phosphokinase_value" value="" required="required"/>
+
+    <h2>diabetes</h2>
+    <input class="diabetes" type="text" id="uidiabetes" name="diabetes_value" value="0/1" required="required"/>
+
+    <h2>ejection_fraction</h2>
+    <input class="ejection_fraction" type="text" id="uiejection_fraction" name="ejection_fraction_value" value="" required="required"/>
+
+    <h2>high_blood_pressure</h2>
+    <input class="high_blood_pressure" type="text" id="uihigh_blood_pressure" name="high_blood_pressure_value" value="0/1" required="required"/>
+
+    <h2>platelets</h2>
+    <input class="platelets" type="text" id="uiplatelets" name="platelets_value" value="" required="required"/>
+
+    <h2>serum_creatinine</h2>
+    <input class="serum_creatinine" type="text" id="uiserum_creatinine" name="serum_creatinine_value" value="" required="required"/>
+
+    <h2>serum_sodium</h2>
+    <input class="serum_sodium" type="text" id="uiserum_sodium" name="serum_sodium_value" value="" required="required"/>
+
+    <h2>sex</h2>
+    <input class="sex" type="text" id="uisex" name="sex_value" value="1:male 0:female" required="required"/>
+
+    <h2>smoking</h2>
+    <input class="smoking" type="text" id="uismoking" name="smoking_value" value="0/1" required="required"/>
+
+    <h2>time</h2>
+    <input class="time" type="text" id="uitime" name="time_value" value="" required="required"/>
+    <br>
+    <input type="submit" class="submit" value="Predict Heart Failure">
+    <div id="uiheart_failure" class="result">	<h2> {{ response }} </h2> </div>
+
+</form>
+</body>
